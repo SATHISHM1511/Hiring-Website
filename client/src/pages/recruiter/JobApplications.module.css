@@ -1,0 +1,156 @@
+.filters {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.statusTabs {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.statusTab {
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--border-light);
+  background: var(--bg-card);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: var(--font-primary);
+}
+
+.statusTab:hover { border-color: var(--primary); color: var(--primary); }
+.activeTab { background: var(--primary); color: white; border-color: var(--primary); }
+
+.candidateCell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.candidateAvatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.candidateAvatar img { width: 100%; height: 100%; object-fit: cover; }
+
+.candidateName { font-size: 0.875rem; font-weight: 600; color: var(--text-primary); }
+.candidateEmail { font-size: 0.75rem; color: var(--text-muted); }
+
+.jobTitle { font-size: 0.875rem; font-weight: 600; color: var(--text-primary); }
+.jobMeta { font-size: 0.75rem; color: var(--text-muted); }
+
+.statusSelect {
+  border: none !important;
+  cursor: pointer;
+  padding: 4px 10px !important;
+  font-family: var(--font-primary) !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  border-radius: var(--radius-full) !important;
+  outline: none;
+}
+
+.expandedRow {
+  background: var(--bg-secondary);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  margin: 4px;
+}
+
+.expandedGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--spacing-lg);
+}
+
+.expandedLabel {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.expandedValue {
+  font-size: 0.875rem;
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .filters { flex-direction: column; align-items: stretch; }
+  .expandedGrid { grid-template-columns: 1fr; }
+}
+
+/* Modals */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-lg);
+}
+
+.modalContent {
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 500px;
+  box-shadow: var(--shadow-2xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.modalHeader {
+  padding: var(--spacing-lg) var(--spacing-xl);
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modalHeader h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.modalBody {
+  padding: var(--spacing-xl);
+  overflow-y: auto;
+  max-height: 70vh;
+}
+
+.modalFooter {
+  padding: var(--spacing-lg) var(--spacing-xl);
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--spacing-md);
+  background: var(--bg-secondary);
+}

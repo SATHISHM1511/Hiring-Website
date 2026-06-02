@@ -1,0 +1,144 @@
+.welcomeBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-xl);
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  padding: var(--spacing-xl);
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.welcomeTitle {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.welcomeSubtitle { font-size: 0.875rem; color: var(--text-muted); }
+
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+}
+
+.skeletonRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+}
+
+.appList { display: flex; flex-direction: column; gap: 0; }
+
+.appRow {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-light);
+  transition: background var(--transition-fast);
+}
+
+.appRow:last-child { border-bottom: none; }
+.appRow:hover { background: var(--bg-secondary); border-radius: var(--radius-md); padding: 12px 8px; }
+
+.appAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.appAvatar img { width: 100%; height: 100%; object-fit: cover; }
+
+.appInfo { flex: 1; min-width: 0; }
+.appName { font-size: 0.875rem; font-weight: 600; color: var(--text-primary); }
+.appJob { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.appRight { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+.appDate { font-size: 0.72rem; color: var(--text-muted); }
+
+/* Quick Actions */
+.quickActions { display: flex; flex-direction: column; gap: 8px; margin-bottom: var(--spacing-lg); }
+
+.quickAction {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--border-light);
+  background: var(--bg-secondary);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.quickAction:hover { border-color: var(--primary); background: rgba(37,99,235,0.05); }
+
+.qaIcon { font-size: 1.4rem; }
+.qaInfo { flex: 1; }
+.qaLabel { font-size: 0.875rem; font-weight: 600; color: var(--text-primary); }
+.qaDesc { font-size: 0.75rem; color: var(--text-muted); margin-top: 1px; }
+.qaArrow { color: var(--text-muted); transition: transform var(--transition-fast); }
+.quickAction:hover .qaArrow { transform: translateX(4px); color: var(--primary); }
+
+/* Status Section */
+.statusSection {
+  border-top: 1px solid var(--border-light);
+  padding-top: var(--spacing-md);
+}
+
+.statusTitle { font-size: 0.9rem; font-weight: 700; color: var(--text-primary); margin-bottom: var(--spacing-md); }
+
+.statusList { display: flex; flex-direction: column; gap: 8px; }
+
+.statusRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.statusCount { font-size: 0.875rem; font-weight: 700; color: var(--text-primary); }
+
+/* Top Jobs */
+.topJobsGrid { display: flex; flex-direction: column; gap: var(--spacing-md); }
+
+.topJobCard {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.topJobRank {
+  font-size: 1rem;
+  font-weight: 900;
+  color: var(--text-muted);
+  width: 28px;
+  flex-shrink: 0;
+}
+
+.topJobInfo { min-width: 200px; }
+.topJobTitle { font-size: 0.875rem; font-weight: 600; color: var(--text-primary); }
+.topJobApps { font-size: 0.75rem; color: var(--text-muted); }
+
+.topJobBar { flex: 1; height: 6px; background: var(--bg-tertiary); border-radius: var(--radius-full); overflow: hidden; }
+.topJobFill { height: 100%; background: var(--gradient-primary); border-radius: var(--radius-full); transition: width 1s ease; }
+
+@media (max-width: 900px) {
+  .dashboardGrid { grid-template-columns: 1fr; }
+}

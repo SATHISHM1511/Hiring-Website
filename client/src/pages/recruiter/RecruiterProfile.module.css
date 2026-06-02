@@ -1,0 +1,103 @@
+.profileHeader { margin-bottom: var(--spacing-lg); }
+
+.logoSection {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.logoWrapper {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+}
+
+.logoImg {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-xl);
+  object-fit: cover;
+  border: 2px solid var(--border-light);
+}
+
+.logoFallback {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-xl);
+  background: var(--gradient-primary);
+  color: white;
+  font-size: 2rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoUpload {
+  position: absolute;
+  bottom: -6px;
+  right: -6px;
+  width: 30px;
+  height: 30px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  border: 2px solid var(--bg-card);
+  font-size: 0.8rem;
+  transition: all var(--transition-fast);
+}
+
+.logoUpload:hover { transform: scale(1.1); background: var(--primary-dark); }
+
+.companyInfo { flex: 1; }
+.companyName { font-size: 1.75rem; font-weight: 800; color: var(--text-primary); margin-bottom: 4px; }
+.companyEmail { font-size: 0.875rem; color: var(--text-muted); margin-bottom: var(--spacing-md); }
+.companyTags { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.profileGrid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: var(--spacing-lg);
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-lg);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+
+.statsPanel { display: flex; flex-direction: column; gap: var(--spacing-lg); }
+
+.completionItems { display: flex; flex-direction: column; gap: 10px; margin-bottom: var(--spacing-lg); }
+
+.completionItem { display: flex; align-items: center; gap: 10px; }
+
+.checkDone { color: var(--success); font-size: 1rem; font-weight: 700; }
+.checkPending { color: var(--text-muted); }
+
+.itemDone { font-size: 0.875rem; color: var(--text-primary); font-weight: 500; }
+.itemPending { font-size: 0.875rem; color: var(--text-muted); }
+
+.completionBar { margin-top: var(--spacing-md); }
+.completionPct { font-size: 0.8rem; font-weight: 700; color: var(--primary); margin-top: 8px; text-align: right; }
+
+@media (max-width: 900px) {
+  .profileGrid { grid-template-columns: 1fr; }
+  .formGrid { grid-template-columns: 1fr; }
+  .logoSection { flex-direction: column; text-align: center; }
+}

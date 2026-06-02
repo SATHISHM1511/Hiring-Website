@@ -1,0 +1,77 @@
+.aiNote {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(37,99,235,0.06);
+  border: 1px solid rgba(37,99,235,0.15);
+  border-radius: var(--radius-lg);
+  padding: 14px 18px;
+  color: var(--primary);
+  margin-bottom: var(--spacing-xl);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.jobCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+}
+
+.jobCard:hover { box-shadow: var(--shadow-xl); border-color: var(--primary); }
+
+.matchHeader { display: flex; flex-direction: column; gap: 8px; }
+
+.matchScore {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 700;
+  width: fit-content;
+}
+
+.matchBar { height: 4px; background: var(--bg-tertiary); border-radius: var(--radius-full); overflow: hidden; }
+.matchFill { height: 100%; border-radius: var(--radius-full); transition: width 1s ease; }
+
+.cardBody { display: flex; flex-direction: column; gap: 8px; }
+
+.logo {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  overflow: hidden;
+}
+
+.logo img { width: 100%; height: 100%; object-fit: contain; }
+
+.title { font-size: 1rem; font-weight: 700; color: var(--text-primary); }
+.company { font-size: 0.82rem; color: var(--text-muted); }
+
+.meta { display: flex; flex-wrap: wrap; gap: 8px; }
+.meta span { display: flex; align-items: center; gap: 4px; font-size: 0.78rem; color: var(--text-secondary); }
+
+.skills { display: flex; flex-wrap: wrap; gap: 6px; }
+
+@media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }

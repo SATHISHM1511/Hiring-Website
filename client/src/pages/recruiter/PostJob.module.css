@@ -1,0 +1,196 @@
+.pageHeader { margin-bottom: var(--spacing-xl); }
+
+.progressContainer {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.steps {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.stepIndicator {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.stepCircle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--border-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  transition: all var(--transition-base);
+  background: var(--bg-card);
+}
+
+.stepDone .stepCircle {
+  background: var(--success);
+  border-color: var(--success);
+  color: white;
+}
+
+.stepActive .stepCircle {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+  box-shadow: 0 0 0 4px rgba(37,99,235,0.2);
+}
+
+.stepName {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.stepActive .stepName { color: var(--primary); }
+.stepDone .stepName { color: var(--success); }
+
+.stepLine {
+  flex: 1;
+  height: 2px;
+  background: var(--border-light);
+  margin: 0 var(--spacing-md);
+  transition: background var(--transition-base);
+}
+
+.stepLineDone { background: var(--success); }
+
+.progressBar {
+  height: 4px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+  transition: width 0.5s ease;
+}
+
+/* Form */
+.formContainer {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-2xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.stepContent { display: flex; flex-direction: column; gap: var(--spacing-lg); }
+
+.stepTitle {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.stepSubtitle { color: var(--text-muted); font-size: 0.9rem; margin-top: -12px; }
+
+.formGrid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.checkboxLabel input { accent-color: var(--primary); width: 16px; height: 16px; cursor: pointer; }
+
+/* Skills */
+.skillInput {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.skillInput .form-input { flex: 1; }
+
+.skillTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: var(--spacing-sm);
+  min-height: 36px;
+}
+
+.skillTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(37,99,235,0.1);
+  color: var(--primary);
+  border: 1px solid rgba(37,99,235,0.2);
+  border-radius: var(--radius-full);
+  padding: 5px 12px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.skillTag button {
+  background: none;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  display: flex;
+  padding: 0;
+  opacity: 0.7;
+  transition: opacity var(--transition-fast);
+}
+
+.skillTag button:hover { opacity: 1; }
+
+/* Preview */
+.jobPreview {
+  background: var(--bg-secondary);
+  border: 2px dashed var(--border-medium);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
+}
+
+.previewHeader { margin-bottom: var(--spacing-lg); }
+.previewHeader h3 { font-size: 1.3rem; font-weight: 800; color: var(--text-primary); margin-bottom: 8px; }
+.previewMeta { display: flex; gap: var(--spacing-md); flex-wrap: wrap; font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 12px; }
+.previewSkills { display: flex; flex-wrap: wrap; gap: 6px; }
+
+/* Nav */
+.formNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--spacing-xl);
+  margin-top: var(--spacing-xl);
+  border-top: 1px solid var(--border-light);
+}
+
+.navRight { display: flex; gap: var(--spacing-sm); }
+
+@media (max-width: 768px) {
+  .formGrid2 { grid-template-columns: 1fr; }
+  .steps { display: none; }
+  .formNav { flex-direction: column; gap: var(--spacing-md); }
+  .navRight { width: 100%; }
+}

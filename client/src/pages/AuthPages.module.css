@@ -1,0 +1,370 @@
+/* ── Auth Pages Shared CSS ── */
+
+.authPage {
+  min-height: 100vh;
+  display: flex;
+  background: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.authBg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.authBlob1, .authBlob2 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+}
+
+.authBlob1 {
+  width: 500px; height: 500px;
+  background: var(--primary);
+  opacity: 0.08;
+  top: -200px;
+  left: -100px;
+}
+
+.authBlob2 {
+  width: 400px; height: 400px;
+  background: var(--secondary);
+  opacity: 0.08;
+  bottom: -150px;
+  right: -50px;
+}
+
+/* ── Left Panel ── */
+.leftPanel {
+  flex: 1;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  padding: var(--spacing-2xl) var(--spacing-3xl);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.leftPanel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.brandLogo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: white;
+  text-decoration: none;
+  position: relative;
+}
+
+.brandIcon {
+  width: 36px;
+  height: 36px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.leftContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--spacing-2xl) 0;
+  position: relative;
+}
+
+.leftContent h1 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  color: white;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-lg);
+}
+
+.leftContent h1 span {
+  color: rgba(255,255,255,0.9);
+  -webkit-text-fill-color: rgba(255,255,255,0.9) !important;
+}
+
+.leftContent > p {
+  color: rgba(255,255,255,0.75);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: var(--spacing-xl);
+}
+
+.featureList { display: flex; flex-direction: column; gap: var(--spacing-md); }
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.checkIcon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Stats */
+.leftStats {
+  display: flex;
+  gap: var(--spacing-xl);
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid rgba(255,255,255,0.15);
+  position: relative;
+}
+
+.leftStat { text-align: center; }
+.leftStatValue { font-size: 1.5rem; font-weight: 900; color: white; }
+.leftStatLabel { font-size: 0.75rem; color: rgba(255,255,255,0.65); }
+
+/* Decor Card */
+.leftDecor {
+  position: absolute;
+  bottom: var(--spacing-3xl);
+  right: var(--spacing-xl);
+}
+
+.decorCard {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: var(--radius-xl);
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.5rem;
+}
+
+.decorTitle { font-size: 0.85rem; font-weight: 700; color: white; }
+.decorSub { font-size: 0.75rem; color: rgba(255,255,255,0.7); }
+
+/* ── Right Panel ── */
+.rightPanel {
+  width: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl);
+  overflow-y: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.authCard {
+  width: 100%;
+  max-width: 440px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-2xl);
+  padding: var(--spacing-2xl);
+  box-shadow: var(--shadow-xl);
+}
+
+.authCardHeader {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.authCardHeader h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.authCardHeader p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+/* Role Selector (Login) */
+.roleSelector { margin-bottom: var(--spacing-lg); }
+
+.roleGrid { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+
+.roleCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--border-light);
+  background: var(--bg-input);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: left;
+  width: 100%;
+}
+
+.roleCard:hover { border-color: var(--primary); }
+.roleActive { border-color: var(--primary) !important; background: rgba(37, 99, 235, 0.05) !important; }
+
+.roleIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.roleIcon_blue { background: rgba(37, 99, 235, 0.1); color: var(--primary); }
+.roleIcon_purple { background: rgba(124, 58, 237, 0.1); color: var(--secondary); }
+
+.roleInfo { flex: 1; }
+.roleLabel { font-size: 0.875rem; font-weight: 700; color: var(--text-primary); }
+.roleDesc { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
+
+/* Role Tabs (Register) */
+.roleTabs {
+  display: flex;
+  gap: 4px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  padding: 4px;
+  margin-bottom: var(--spacing-lg);
+}
+
+.roleTab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: transparent;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: var(--font-primary);
+}
+
+.roleTabActive {
+  background: var(--bg-card);
+  color: var(--primary);
+  box-shadow: var(--shadow-xs);
+}
+
+/* Form */
+.authForm { display: flex; flex-direction: column; gap: var(--spacing-md); }
+
+.formGrid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+
+.inputWrapper { position: relative; display: flex; align-items: center; }
+
+.inputIcon {
+  position: absolute;
+  left: 14px;
+  color: var(--text-muted);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.inputWithIcon { padding-left: 42px !important; }
+.inputWithToggle { padding-right: 42px !important; }
+
+.passwordToggle {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  padding: 4px;
+}
+
+.passwordToggle:hover { color: var(--primary); }
+
+.matchIcon {
+  position: absolute;
+  right: 12px;
+  color: var(--success);
+}
+
+/* Password Strength */
+.strengthBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.strengthSegments { display: flex; gap: 4px; flex: 1; }
+
+.strengthSeg {
+  height: 4px;
+  flex: 1;
+  border-radius: var(--radius-full);
+  transition: background var(--transition-base);
+}
+
+/* Terms */
+.agreeLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+.agreeLabel input { margin-top: 3px; cursor: pointer; accent-color: var(--primary); }
+.agreeLabel a { color: var(--primary); font-weight: 600; }
+
+.formLabel { font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px; }
+
+.loading { opacity: 0.7; cursor: not-allowed; }
+
+.authSwitch {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: var(--spacing-lg);
+}
+
+.authSwitch a { color: var(--primary); font-weight: 600; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .leftPanel { display: none; }
+  .rightPanel { width: 100%; }
+}
